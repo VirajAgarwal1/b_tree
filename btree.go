@@ -1,6 +1,6 @@
 package main
 
-const MAX_DEGREE int = 4 // MAX_DEGREE = 4 means that in one node at most 3 elements can be there and at most 4 children of that node
+const MAX_DEGREE int = 10 // MAX_DEGREE = 4 means that in one node at most 3 elements can be there and at most 4 children of that node
 const min_block_size int = (MAX_DEGREE / 2) - 1
 
 type Node struct {

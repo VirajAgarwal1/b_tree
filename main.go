@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 func preorder(node *Node) {
 	if node != nil {
@@ -14,88 +17,33 @@ func preorder(node *Node) {
 func main() {
 	var root Node
 	var node *Node
+	var n int = 1
+
+	start := time.Now()
 	node = Insert(&root, 1)
-	node = Insert(node, 10)
-	node = Insert(node, 50)
-	node = Insert(node, 100)
-	node = Insert(node, 15)
-	node = Insert(node, 35)
-	node = Insert(node, 77)
-	node = Insert(node, 23)
-	node = Insert(node, 37)
-	node = Insert(node, 39)
-	node = Insert(node, 41)
-	node = Insert(node, 42)
-	node = Insert(node, 43)
-	node = Insert(node, 44)
-	node = Insert(node, 45)
-	node = Insert(node, 46)
-	node = Insert(node, 47)
-	node = Insert(node, 48)
-	preorder(node)
-	fmt.Println()
+	timeElapsed := time.Since(start)
+	fmt.Printf("( 1 , %v )\n", timeElapsed)
+
+	for i := 1; i <= 1000; i++ {
+		n = n + 10
+		root = Node{}
+
+		start = time.Now()
+		node = Insert(&root, 1)
+		for j := 2; j <= n; j++ {
+			node = Insert(node, j)
+		}
+		timeElapsed = time.Since(start)
+
+		// preorder(node)
+		// fmt.Println()
+
+		fmt.Printf("( %v , %v )\n", n, timeElapsed)
+	}
 
 	// fmt.Printf("%p\n", Search(node, 42))
 	// node = Delete(node, 100)
-	// node = Delete(node, 48)
-	// node = Delete(node, 47)
-	// node = Delete(node, 46)
-	// node = Delete(node, 77)
-	// node = Delete(node, 50)
-	// node = Delete(node, 45)
-	// node = Delete(node, 44)
-	// node = Delete(node, 41)
-	// node = Delete(node, 10)
-	// node = Delete(node, 35)
-	// node = Delete(node, 43)
-	// node = Delete(node, 42)
 	// node = Delete(node, 39)
-	// preorder(node)
-	// fmt.Println()
-	// node = Delete(node, 37)
-	// preorder(node)
-	// fmt.Println()
-	// node = Delete(node, 23)
-	// preorder(node)
-	// fmt.Println()
-	// node = Delete(node, 15)
-	// preorder(node)
-	// fmt.Println()
-	// node = Delete(node, 1)
-	// preorder(node)
-	// fmt.Println()
-
-	// node = Delete(node, 50)
-	// node = Delete(node, 77)
-	// node = Delete(node, 100)
-	// node = Delete(node, 47)
-	// node = Delete(node, 48)
-	// node = Delete(node, 44)
-	// node = Delete(node, 45)
-	// node = Delete(node, 42)
-	// node = Delete(node, 43)
-	// node = Delete(node, 41)
-	// node = Delete(node, 37)
-	// node = Delete(node, 46)
-	// node = Delete(node, 39)
-	// node = Delete(node, 15)
-	// node = Delete(node, 23)
-	// preorder(node)
-	// fmt.Println()
-	// node = Delete(node, 10)
-	// preorder(node)
-	// fmt.Println()
-	// node = Delete(node, 35)
-	// preorder(node)
-	// fmt.Println()
-	// node = Delete(node, 1)
-	// preorder(node)
-	// fmt.Println()
-
-	// node = Delete(node, 42)
-	// preorder(node)
-	// fmt.Println()
-	// node = Delete(node, 43)
 	// preorder(node)
 	// fmt.Println()
 }
